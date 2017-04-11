@@ -40,7 +40,7 @@
 #include <libgen.h>
 #include <ewlog.h>
 #include <ewlib.h>
-#include <setjmp.h>
+#include <efisetjmp.h>
 #include <string.h>
 #include <errno.h>
 #include <sys/types.h>
@@ -67,7 +67,7 @@ static ewdrv_t *host_drivers[] = {
 ewdrv_t **ew_drivers = host_drivers;
 
 typedef EFI_STATUS (*efi_main_t)(EFI_HANDLE image, EFI_SYSTEM_TABLE *st);
-static jmp_buf jmp;
+static jmp_buf jmp[1];
 static EFI_STATUS reset_status;
 static char *cmdname;
 

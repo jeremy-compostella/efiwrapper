@@ -32,13 +32,13 @@
 #ifndef _IMAGE_H_
 #define _IMAGE_H_
 
-#include <setjmp.h>
+#include <efisetjmp.h>
 #include <ewdrv.h>
 
 typedef struct image {
 	EFI_LOADED_IMAGE prot;
 	void *data;
-	jmp_buf jmp;
+	jmp_buf jmp[1];
 	EFI_IMAGE_ENTRY_POINT entry;
 	EFI_STATUS exit_status;
 } image_t;
