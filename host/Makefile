@@ -10,7 +10,8 @@ OBJS := main.o \
 	fileio.o \
 	gop.o \
 	image.o \
-	pe.o
+	pe.o \
+	time.o
 
 LDFLAGS := -lX11 -lpthread
 
